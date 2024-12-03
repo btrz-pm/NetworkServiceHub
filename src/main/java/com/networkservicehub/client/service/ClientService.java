@@ -2,6 +2,7 @@ package com.networkservicehub.client.service;
 
 import com.networkservicehub.client.domain.Client;
 import com.networkservicehub.client.repository.ClientRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.Optional;
 
 @Service
 public class ClientService {
+    @Autowired
     private final ClientRepository clientRepository;
 
     public ClientService(ClientRepository clientRepository) {
@@ -21,6 +23,9 @@ public class ClientService {
         return clientRepository.findById(id);
     }
     public Client save(Client client) {
+        return clientRepository.save(client);
+    }
+    public Client createClient(Client client) {
         return clientRepository.save(client);
     }
     public void delete(Long id) {

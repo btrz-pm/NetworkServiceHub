@@ -2,6 +2,7 @@ package com.networkservicehub.client.controller;
 
 import com.networkservicehub.client.domain.Client;
 import com.networkservicehub.client.service.ClientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/clients")
 public class ClientController {
+    @Autowired
     private final ClientService clientService;
 
     public ClientController(ClientService clientService) {

@@ -16,7 +16,16 @@ public class Client {
     private String document;
     private String email;
     private String phone;
-    private String address;
-    private String position;
-    private String company;
+
+    public Client(Long id, String name, String document, String email, String phone) {
+        this.id = id;
+        this.name = name;
+        this.document = document;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public Client() { //JPA
+
+    }
 }
